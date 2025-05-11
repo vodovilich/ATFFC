@@ -1,0 +1,23 @@
+$ORIGIN atffc.hui.
+$TTL    86400
+@       IN      SOA     dns-1601053-ubnt.atffc.hui. huiadmin.atffc.hui. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                          86400 )       ; Negative Cache TTL
+
+@       IN      NS      dns-1601053-ubnt.atffc.hui.
+@       IN      A       10.160.10.53
+@       IN      MX      10      mail.atffc.hui.
+
+dns-1601053-ubnt        IN      A       10.160.10.53
+pki-1601021-ubnt        IN      A       10.160.10.21
+www-1701021-ubnt        IN      A       10.170.10.21
+syslog-1402021-ubnt     IN      A       10.140.20.21
+ntp-1401021-rky 	IN      A       10.140.10.21
+ansible-1801021-rky     IN      A       10.180.10.21
+site01  		IN      CNAME   www-1701021-ubnt
+r160    		IN      A       10.255.255.160
+r170    		IN      A       10.255.255.170
+r180    		IN      A       10.255.255.180

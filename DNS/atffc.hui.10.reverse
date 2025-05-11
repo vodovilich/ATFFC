@@ -1,0 +1,20 @@
+$TTL    86400
+10.in-addr.arpa. IN      SOA     dns-1601053-ubnt.atffc.hui. huiadmin.atffc.hui. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                          86400 )       ; Negative Cache TTL
+;
+@       IN      NS      dns-1601053-ubnt.atffc.hui.
+53.10.160       IN      PTR     dns-1601053-ubnt.atffc.hui.
+21.10.160       IN      PTR     pki-1601021-ubnt.atffc.hui.
+21.10.170       IN      PTR     www-1701021-ubnt.atffc.hui.
+21.20.140       IN      PTR     syslog-1402021-ubnt.atffc.hui.
+21.10.140       IN      PTR     ntp-1401021-rky.atffc.hui.
+21.10.180       IN      PTR     ansible-1801021-rky.atffc.hui.
+140.255.255     IN      PTR     r140.atffc.hui.
+160.255.255     IN      PTR     r160.atffc.hui.
+170.255.255     IN      PTR     r170.atffc.hui.
+180.255.255     IN      PTR     r180.atffc.hui.
+
