@@ -1,0 +1,12 @@
+#ubuntu
+#/etc/bind/named.conf.local
+
+zone "atffc.hui" {
+        type master;
+        file "/etc/bind/atffc.hui.160.forward";
+};
+
+zone "10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/atffc.hui.10.reverse";
+};
