@@ -1,8 +1,13 @@
-[dns]
+[dns_server]
 dns-1601053-ubnt.atffc.hui
 
-[ntp]
+[ntp_server]
 ntp-1401021-rky.atffc.hui
 
-[rsyslog]
+[rsyslog_server]
 syslog-1402021-ubnt.atffc.hui
+
+[ntp_clients_ubuntu]
+syslog-1402021-ubnt.atffc.hui
+dns-1601053-ubnt.atffc.hui
+dhcp-1701022-ubnt.atffc.hui

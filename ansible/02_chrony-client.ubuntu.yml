@@ -1,0 +1,6 @@
+---
+- name: chrony ubuntu client
+  hosts: ntp_clients_ubuntu
+  become: yes
+  roles: 
+    - ntp_client_ubuntu
