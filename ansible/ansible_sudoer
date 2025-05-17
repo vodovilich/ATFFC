@@ -1,0 +1,5 @@
+#<user> <host> = (<runas>) <options>: <commands>
+#permissions: 0440
+#/etc/sudoers.d/ansible_sudoer
+#CHECK WITH: sudo visudo -cf /etc/sudoers.d/ansible_sudoer
+gandalf ALL=(ALL) NOPASSWD: ALL

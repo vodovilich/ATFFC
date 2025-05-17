@@ -1,0 +1,8 @@
+[dns]
+dns-1601053-ubnt.atffc.hui
+
+[ntp]
+ntp-1401021-rky.atffc.hui
+
+[rsyslog]
+syslog-1402021-ubnt.atffc.hui
