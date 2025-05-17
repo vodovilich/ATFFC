@@ -1,0 +1,31 @@
+---
+#Setup chrony client on ubuntu
+- name: Install chrony
+  apt:
+    name: chrony
+    state: present
+
+- name: Star and enable chrony service
+  service:
+    name: chrony
+    state: started
+    enabled: yes
+
+- name: Update config files
+  block:
+    - name: Deploy chrony.conf
+      copy: 
+        src: chrony.conf.ubuntu.client
+        dest:  /etc/chrony/chrony.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Deploy chrony.keys
+      copy:
+        src: chrony.key.ubuntu
+        dest: /etc/chrony/chrony.keys 
+        owner: root
+        group: _chrony
+        mode: '0640'
+  notify: Restart chrony
