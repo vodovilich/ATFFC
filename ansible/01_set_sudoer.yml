@@ -1,0 +1,13 @@
+---
+#Place ansible_sudoer file on remotes to allow becoming without password
+#ansible-playbook -i hosts -b -K
+- name: Set ansible_sudoer Playbook
+  hosts: all
+  tasks:
+    - name: Set ansible_sudoer Task
+      copy:
+        src: ansible_sudoer
+        dest: /etc/sudoers.d/ansible_sudoer 
+        owner: root
+        group: root
+        mode: '0440'
