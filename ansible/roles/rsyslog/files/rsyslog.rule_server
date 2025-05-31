@@ -1,0 +1,40 @@
+#/etc/rsyslog.d/10_SourceHostnameDir.conf
+#-rw-r--r-- 1 root root 
+
+template(name="SourceHostnameDir" type="list") {
+        constant(value="/var/log/remote_logs/")
+#       property(name="hostname")
+        property(name="fromhost")
+        constant(value="/")
+        property(name="timegenerated" dateFormat="year")
+        constant(value="-")
+        property(name="timegenerated" dateFormat="month")
+        constant(value="-")
+        property(name="timegenerated" dateFormat="day")
+        constant(value=".log")
+}
+
+
+template(name="LogStringModify" type="string" string="%timereported:::date-rfc3339% %syslogtag%[facility=%syslogfacility-text%] %msg%\n")
+
+if ($fromhost-ip != '127.0.0.1') then {
+    action(type="omfile" dynaFile="SourceHostnameDir" createDirs="on" template="LogStringModify")
+}
+
+
+#RESULT:
+#gandalf@syslog-1402021-ubnt:~$ sudo tree /var/log/remote_logs/
+#/var/log/remote_logs/
+#├── pki-1601021-ubnt.atffc.hui
+#│   ├── 2025-05-27.log
+#│   ├── 2025-05-28.log
+#│   ├── 2025-05-29.log
+#│   ├── 2025-05-30.log
+#│   └── 2025-05-31.log
+#└── r160.atffc.hui
+#    ├── 2025-05-27.log
+#    ├── 2025-05-28.log
+#    ├── 2025-05-29.log
+#    └── 2025-05-31.log
+
+

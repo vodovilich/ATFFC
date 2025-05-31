@@ -1,0 +1,4 @@
+#/etc/rsyslog.d/60_remotelog.conf
+# -rw-r--r-- 1 root root
+
+*.* @@10.140.20.21:514

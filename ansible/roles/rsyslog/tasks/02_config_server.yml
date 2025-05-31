@@ -1,0 +1,18 @@
+- name: Install rsyslog server config files
+  block:
+    - name: Deploy rsyslog.conf on server
+      copy:
+        src: rsyslog.conf.server
+        dest: /etc/rsyslog.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Deploy rsyslog rules on server
+      copy:
+        src: rsyslog.rule_server
+        dest: /etc/rsyslog.d/10_SourceHostnameDir.conf
+        owner: root
+        group: root
+        mode: '0644'
+  notify: Restart rsyslog

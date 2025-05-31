@@ -5,7 +5,7 @@
     name: chrony
     state: present
 
-- name: Star and enable chrony service
+- name: Start and enable chrony service
   service:
     name: chrony
     state: started

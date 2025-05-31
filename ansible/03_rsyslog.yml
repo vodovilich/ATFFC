@@ -1,0 +1,6 @@
+---
+- name: configure rsyslog on server and clients
+  hosts: all
+  become: yes
+  roles: 
+    - rsyslog
