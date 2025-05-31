@@ -1,0 +1,11 @@
+- name: Install rsyslog on Ubuntu
+  apt:
+    name: rsyslog
+    state: present
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Install rsyslog on Rocky
+  dnf:
+    name: rsyslog
+    state: present
+  when: ansible_facts['os_family'] == "RedHat"

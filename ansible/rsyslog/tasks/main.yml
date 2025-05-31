@@ -1,0 +1,11 @@
+---
+- name: Install rsyslog
+  include_tasks: 01_install.yml
+
+- name: Configure rsyslog server
+  include_tasks: 02_config_server.yml
+  when: "'rsyslog_server' in group_names"
+
+- name: Configure rsyslog clients
+  include_tasks: 03_config_clients.yml
+  when: "'rsyslog_clients' in group_names"

@@ -11,3 +11,8 @@ syslog-1402021-ubnt.atffc.hui
 syslog-1402021-ubnt.atffc.hui
 dns-1601053-ubnt.atffc.hui
 dhcp-1701022-ubnt.atffc.hui
+
+[rsyslog_clients]
+ntp-1401021-rky.atffc.hui
+dns-1601053-ubnt.atffc.hui
+dhcp-1701022-ubnt.atffc.hui
